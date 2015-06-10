@@ -79,6 +79,7 @@ body {
 	background:#000 url('/images/bg.png') 50% 0% no-repeat;
 	font-family: "Metronic", "Myriad Pro", Myriad, Arial, sans-serif;
 	color:#FFF;
+	background-size: cover;
 }
 a, a:link, a:visited, a:hover, a:active {
 	color:#FFF;
@@ -233,4 +234,128 @@ a.play:hover, a.play:active {
 	text-align: center;
 	background:transparent url('/images/loading.png') 50% 0 no-repeat;
 	padding-top:105px;
+}
+#battleground {
+	background:transparent url('/images/battleground.png') 50% 0% no-repeat;
+}
+.hero-info {
+	width:307px;
+	height:78px;
+	position:absolute;
+	bottom:-8px;
+	left:-30px;
+	background:transparent url('/images/status.png') 50% 0% no-repeat;
+}
+.hero-name {
+	float:right;
+	text-align: right;
+	height:36px;
+	padding-top:30px;
+	padding-right:40px;
+	text-transform: uppercase;
+	text-shadow:0 0 8px #009cff;
+}
+.hero-points {
+	float:left;
+	padding-top:45px;
+	padding-left:55px;
+}
+.hero-battle {
+	height: 150px;
+	top:50%;
+	position: relative;
+	margin-top: -110px;
+	line-height: 150px;
+}
+.hero-battle > a {
+	text-indent: -10000px;
+	display:block;
+}
+
+.hero-battle > a.hero {
+	height:50px;
+	width:50px;
+	position:absolute;
+	top:50%;
+	margin-top:-20px;
+}
+
+.hero-battle > a.hero.friendly {
+	left:142px;
+}
+
+.hero-battle > a.hero.enemy {
+	right:122px;
+	margin-top: -32px;
+}
+.hero-battle > a.hero.brightwing {
+	background:transparent url('/images/brightwing.png') 50% 0% no-repeat;
+	background-size: 70%;
+}
+
+.hero-battle > a.hero.murky {
+	background:transparent url('/images/murky.png') 50% 0% no-repeat;
+	background-size: 70%;
+}
+
+.hero-battle > a.hero.abathur {
+	background:transparent url('/images/abathur.png') 50% 0% no-repeat;
+	background-size: 70%;
+}
+
+.hero-battle > a.hero.azmodan {
+	background:transparent url('/images/azmodan.png') 50% 0% no-repeat;
+	background-size: 70%;
+}
+
+.hero-battle > a.hero.sonya {
+	background:transparent url('/images/sonya.png') 50% 0% no-repeat;
+	background-size: 70%;
+}
+
+.hero-battle > a.hero.gazlowe {
+	background:transparent url('/images/gazlowe.png') 50% 0% no-repeat;
+	background-size: 70%;
+}
+.hero-battle > a.hero:after {
+	display:block;
+	height:50px;
+	width:50px;
+	text-indent: -10000px;
+	background:transparent none top left no-repeat;
+  	content: "";
+  	position: absolute;
+  	top:-5px;
+}
+.hero-battle > a.hero.friendly:after {
+	background-image: url('/images/blue-border.png');
+	background-size:50px 50px;
+}
+.hero-battle > a.hero.enemy:after {
+	background-image: url('/images/red-border.png');
+	background-size:50px 50px;
+}
+.hero-battle > a.minion, .hero-battle > a.minion:link, .hero-battle > a.minion:visited {
+	background:transparent url('/images/minion.png') top left no-repeat;
+	height:29px;
+	width:32px;
+	position:absolute;
+	right:5px;
+	top:50%;
+	margin-top: -34px;
+  	transition: right linear .5s;
+}
+
+.hero-battle > a.boss, .hero-battle > a.boss:link, .hero-battle > a.boss:visited {
+	background:transparent url('/images/boss.png') top left no-repeat;
+	height:105px;
+	width:123px;
+	position:absolute;
+	right:5px;
+	top:50%;
+	margin-top: -80px;
+  	transition: right linear .5s;
+}
+.hero-battle > a.minion:hover, .hero-battle > a.minion:active, .hero-battle > a.boss:hover, .hero-battle > a.boss:active {
+	background-position: top right;
 }
