@@ -344,6 +344,7 @@ a.play:hover, a.play:active {
 	top:50%;
 	margin-top: -34px;
   	transition: right linear .5s;
+  	z-index: 3;
 }
 
 .hero-battle > a.boss, .hero-battle > a.boss:link, .hero-battle > a.boss:visited {
@@ -354,7 +355,8 @@ a.play:hover, a.play:active {
 	right:5px;
 	top:50%;
 	margin-top: -80px;
-  	transition: right linear .5s;
+  	transition: right linear 1s;
+  	z-index: 4;
 }
 .hero-battle > a.minion:hover, .hero-battle > a.minion:active, .hero-battle > a.boss:hover, .hero-battle > a.boss:active {
 	background-position: top right;
