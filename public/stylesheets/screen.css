@@ -342,7 +342,7 @@ a.play:hover, a.play:active {
 	position:absolute;
 	right:5px;
 	top:50%;
-	margin-top: -34px;
+	margin-top: -27px;
   	transition: right linear .5s;
   	z-index: 3;
 }
@@ -360,4 +360,33 @@ a.play:hover, a.play:active {
 }
 .hero-battle > a.minion:hover, .hero-battle > a.minion:active, .hero-battle > a.boss:hover, .hero-battle > a.boss:active {
 	background-position: top right;
+}
+#end {
+	text-align:center;
+}
+.final-points-container, .thanks {
+	width:475px;
+	margin:auto;
+	text-shadow:0 0 8px #009cff;
+}
+.thanks {
+	text-transform: uppercase;
+	padding:150px 0 190px 0;
+	font-size:37px;
+	background: transparent url('/images/cherpofthestorm.png') 50% 100% no-repeat;
+}
+.final-points-container {
+	font-size:44px;
+	padding:20px 0 0 0;
+}
+.high-score {
+	padding:20px 0 100px 0;
+	width:475px;
+	margin:auto;
+	text-transform: uppercase;
+}
+footer {
+	padding:100px 0 0 0;
+	font-style: italic;
+	font-size: 14px;
 }

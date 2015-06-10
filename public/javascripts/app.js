@@ -76,7 +76,7 @@ function showBattleground(callback) {
 	callback && callback();
 }
 
-function updateScore(score) {
+function updateScore() {
 	var s = $(".hero-points");
 	s.html(score);
 }
@@ -109,7 +109,7 @@ function startGame() {
 		$b.css({right: '+=5px'});
 		$.each(enemies, function() {
 			var $this = $(this);
-			if ($this.css("right").replace("px", "") >= 1100 || $this.css("right").replace("px", "") >= 1100) {
+			if ($this.css("right").replace("px", "") >= 1075 || $this.css("right").replace("px", "") >= 1075) {
 				clearInterval(bosses);
 				clearInterval(minions);
 				showEndScreen();
@@ -125,4 +125,28 @@ function create(type) {
 function showEndScreen() {
 	$("#battleground").removeClass("active");
 	$("#end").addClass("active");
+	$(".final-points-container span").html(getFinalScore());
+	$(".high-score span").html(getHighScore());
+}
+function getFinalScore() {
+	var u = "point";
+	if (score != 1) { u = u+"s"; }
+	return score+" "+u;
+}
+function getHighScore() {
+	var u = "point";
+	highScore = localStorage.getItem('highScore');
+	if (highScore) {
+		if (score > highScore) {
+			highScore = score;
+			localStorage.setItem('highScore', score);
+		}
+	}
+	else {
+		localStorage.setItem('highScore', score);
+		highScore = score;
+	}
+	if (highScore != 1) { u = u+"s"; }
+	highScore = highScore+" "+u;
+	return highScore;
 }
