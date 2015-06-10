@@ -99,12 +99,20 @@ a, a:link, a:visited, a:hover, a:active {
 	top:0px;
 	left:50%;
 	margin-left:-212px;
+	z-index:3;
 }
+
 section {
 	opacity:0;
+	position:absolute;
+	width:1274px;
+	height:781px;
+	z-index: 0;
+  	transition: all linear .5s;
 }
 section.active {
 	opacity:1.0;
+	z-index:1;
 }
 #main p {
 	text-transform: uppercase;
@@ -146,38 +154,41 @@ section.active {
 	margin-top:-18px;
 }
 
-li.murky, li.abathur, li.sonya, li.gazlowe, li.azmodan, li.kt{
+li#murky, li#abathur, li#sonya, li#gazlowe, li#azmodan, li#kt{
 	float:left;
 	margin-left:-32px;
 }
 
-li.murky {
+li#murky {
 	background:transparent url('/images/murky.png') 50% 3px no-repeat;
 }
 
-li.abathur {
+li#abathur {
 	background:transparent url('/images/abathur.png') 50% 3px no-repeat;
 }
 
-li.sonya {
+li#sonya {
 	background:transparent url('/images/sonya.png') 50% 3px no-repeat;
 }
 
-li.azmodan {
+li#azmodan {
 	margin-top:-35px;
 	margin-left:-35px;
 	background:transparent url('/images/azmodan.png') 50% 3px no-repeat;
 }
 
-li.gazlowe {
+li#gazlowe {
 	margin-top:-35px;
 	margin-left:4px;
 	background:transparent url('/images/gazlowe.png') 50% 3px no-repeat;
 }
-li.kt {
+li#kt {
 	margin-top:-35px;
 	margin-left:36px;
 	background:transparent url('/images/kt.png') 50% 3px no-repeat;
+}
+li#kt.murky {
+	background:transparent url('/images/murky.png') 50% 3px no-repeat;
 }
 a.play {
 	text-transform: uppercase;
@@ -195,4 +206,31 @@ a.play {
 }
 a.play:hover, a.play:active {
 	box-shadow: inset 0 0 16px 1px rgba(255, 255, 255, .75);
+}
+#hero-loading {
+	height:60px;
+	width:665px;
+	margin:auto;
+	padding-top:605px;
+}
+#hero-loading.murky {
+	background:transparent url('/images/murky-bg.png') 50% 0 no-repeat;
+}
+#hero-loading.azmodan {
+	background:transparent url('/images/azmodan-bg.png') 50% 0 no-repeat;
+}
+#hero-loading.sonya {
+	background:transparent url('/images/sonya-bg.png') 50% 0 no-repeat;
+}
+#hero-loading.abathur {
+	background:transparent url('/images/abathur-bg.png') 50% 0 no-repeat;
+}
+#hero-loading.gazlowe {
+	background:transparent url('/images/gazlowe-bg.png') 50% 0 no-repeat;
+}
+#hero-loading > p {
+	font-style:italic;
+	text-align: center;
+	background:transparent url('/images/loading.png') 50% 0 no-repeat;
+	padding-top:105px;
 }
