@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heroes of the F.O.R.M.</title>
+    <link href="/stylesheets/screen.css" media="all" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script language="javascript" src="/javascripts/jquery-1.6.2.min.js" type="text/javascript"></script><script language="javascript" src="/javascripts/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script><script language="javascript" src="/javascripts/app.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-logo">
+        <h1 class="title">Heroes of the F.O.R.M.</h1>
+        <h2 class="subtitle">(Front-end Operated Removal Mission)</h2>
+      </header>
+      <div class="inner-container">
+        <section id="main" class="active">
+          <p>A solo clicker of negligible proportions</p>
+          <div class="hero-selection">
+            <p>Summon your Hero</p>
+            <ul>
+              <li class="murky selected"><a href="javascript:;">Murky</a></li>
+              <li class="abathur"><a href="javascript:;">Abathur</a></li>
+              <li class="sonya"><a href="javascript:;">Sonya</a></li>
+              <li class="gazlowe"><a href="javascript:;">Gazlowe</a></li>
+              <li class="azmodan"><a href="javascript:;">Azmodan</a></li>
+              <li class="kt"><a href="javascript:;">KT</a></li>
+            </ul>
+            <a class="play" href="javascript:;">Play</a>
+          </div>
+        </section>
+        <section id="loading">
+          <div id="hero-loading" class="murky">
+            <p>left click the minions to remove them before they reach your hero <br />
+              bosses may require multiple clicks to defeat</p>
+          </div>
+        </section>
+        <section id="battleground">
+          <div class="hero-battle"></div>
+          <div class="hero-info">
+            <p class="hero-name">Murky</p>
+            <p class="hero-points">0</p>
+          </div>
+        </section>
+        <section id="end">
+          <p>Thanks for playing</p>
+          <div class="final-points-container">
+            <span>0 points</span>
+          </div>
+          <p class="high-score">Your highest score: <span>0 points</span></p>
+          <a class="play-again" href="javascript:;">play again?</a>
+          <footer>
+            <a href="http://cherstewart.herokuapp.com">cherstewart.herokuapp.com</a>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </body>
+  </html>

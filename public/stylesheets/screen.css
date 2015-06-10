@@ -1,0 +1,198 @@
+/* line 17, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, /Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "Metronic";
+  src: url("/fonts/Metronic Pro Regular.otf") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Metronic Italic";
+  src: url("/fonts/Metronic Pro Regular Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+body {
+	background:#000 url('/images/bg.png') 50% 0% no-repeat;
+	font-family: "Metronic", "Myriad Pro", Myriad, Arial, sans-serif;
+	color:#FFF;
+}
+a, a:link, a:visited, a:hover, a:active {
+	color:#FFF;
+	text-decoration: none;
+}
+.app-container {
+	width:1274px;
+	height:781px;
+	background:transparent url('/images/container-bg.png') 50% 0% no-repeat;
+	margin:110px auto 50px auto;
+}
+.app-logo {
+	height:204px;
+	width:425px;
+	background: transparent url('/images/logo.png') 50% 0% no-repeat;
+	text-indent: -10000px;
+	position:absolute;
+	top:0px;
+	left:50%;
+	margin-left:-212px;
+}
+section {
+	opacity:0;
+}
+section.active {
+	opacity:1.0;
+}
+#main p {
+	text-transform: uppercase;
+	font-size:37px;
+	text-align: center;
+	width:475px;
+	margin:auto;
+	padding:125px 0 0 0;
+}
+#main .hero-selection > p {
+	text-shadow:0 0 8px #009cff;
+	padding-top:90px;
+}
+.hero-selection > ul {
+	width:225px;
+	height:200px;
+	margin:35px auto;
+	padding-left:53px;
+}
+.hero-selection > ul > li {
+	height:92px;
+	width:100px;
+}
+.hero-selection > ul > li > a {
+	display:block;
+	height:92px;
+	width:100px;
+	text-indent:-10000px;
+	background:transparent url('/images/purple-border.png') 50% 0px no-repeat;
+}
+.hero-selection > ul > li.selected > a:after, .hero-selection > ul > li > a:hover:after {
+	display:block;
+	height:92px;
+	width:100px;
+  	content: "";	
+	background:transparent url('/images/blue-border.png') 50% -7px no-repeat;
+	position:absolute;
+	z-index:1;
+	margin-top:-18px;
+}
+
+li.murky, li.abathur, li.sonya, li.gazlowe, li.azmodan, li.kt{
+	float:left;
+	margin-left:-32px;
+}
+
+li.murky {
+	background:transparent url('/images/murky.png') 50% 3px no-repeat;
+}
+
+li.abathur {
+	background:transparent url('/images/abathur.png') 50% 3px no-repeat;
+}
+
+li.sonya {
+	background:transparent url('/images/sonya.png') 50% 3px no-repeat;
+}
+
+li.azmodan {
+	margin-top:-35px;
+	margin-left:-35px;
+	background:transparent url('/images/azmodan.png') 50% 3px no-repeat;
+}
+
+li.gazlowe {
+	margin-top:-35px;
+	margin-left:4px;
+	background:transparent url('/images/gazlowe.png') 50% 3px no-repeat;
+}
+li.kt {
+	margin-top:-35px;
+	margin-left:36px;
+	background:transparent url('/images/kt.png') 50% 3px no-repeat;
+}
+a.play {
+	text-transform: uppercase;
+	font-weight: bold;
+	background: linear-gradient(#f90,#f60);
+  	text-align: center;
+  	padding: 0 20px;
+  	line-height: 48px;
+  	height:44px;
+  	border: 2px solid #ffb674;
+  	font-size:24px;
+  	display:block;
+  	width:100px;
+  	margin:auto;
+}
+a.play:hover, a.play:active {
+	box-shadow: inset 0 0 16px 1px rgba(255, 255, 255, .75);
+}
