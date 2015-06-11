@@ -458,4 +458,5 @@ footer {
 	opacity:0;
 	top:-450px;
 	left:70px;
+	z-index:0;
 }
