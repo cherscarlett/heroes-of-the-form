@@ -31,6 +31,14 @@ $("a.boss").live("click", function(){
 		updateScore(score);
 	}
 });
+$("#heroic.available").live("click", function(){
+	useHeroic();
+});
+$(window).keypress(function(e){
+	if(e.which == 114 && timer > 60) {
+		useHeroic();
+	}
+});
 
 var hero = { name: "murky" };
 var score = 0;
@@ -81,16 +89,20 @@ function updateScore() {
 	s.html(score);
 }
 function startGame() {
+	var $battle = $(".hero-battle");
+
 	var minions = setInterval(function() {
 		timer++; 
 		create("minion"); 
 		if (timer == 60) {
+			$("#heroic").addClass("available");
 			clearInterval(minions);
 			var minions = setInterval( function(){
 				create("minion"); 
 			}, 500);
 		}
 	}, 1000);	
+
 	var bosses = setInterval( function() {
 		create("boss");
 		if (timer == 90) {
@@ -100,11 +112,11 @@ function startGame() {
 			}, 5000);
 		}
 	}, 10000);
+
 	setInterval(function(){
 		var $m = $(".minion"),
 			$b = $(".boss"),
-			enemies = $(".enemy"),
-			$battle = $(".hero-battle");
+			enemies = $(".enemy");
 		$m.css({right: '+=15px'});
 		$b.css({right: '+=5px'});
 		$.each(enemies, function() {
@@ -116,13 +128,14 @@ function startGame() {
 				$battle.remove();
 			}
 		});
-	},500)
+	},500);
 }
 function create(type) {
 	var $battle = $(".hero-battle");
 	$battle.prepend("<a href='javascript:;' class='"+type+" enemy'>"+type+"</a>")
 }
 function showEndScreen() {
+	playAudio("end");
 	$("#battleground").removeClass("active");
 	$("#end").addClass("active");
 	$(".final-points-container span").html(getFinalScore());
@@ -149,4 +162,47 @@ function getHighScore() {
 	if (highScore != 1) { u = u+"s"; }
 	highScore = highScore+" "+u;
 	return highScore;
+}
+function useHeroic() {
+	var $battle = $(".hero-battle"), 
+		$h = $("#heroic");
+	
+	$battle.append("<div class='emerald-wind'></div>");
+	$h.addClass("cooldown");
+	animateHeroic(clearMinions);
+	var coolDown = 60;
+	$h.find("span").html(coolDown);
+	var heroic = setInterval( function() {
+		coolDown--;
+		if (coolDown > 0) {
+			$h.find("span").html(coolDown);
+		}
+		if (coolDown == 0) {
+			$h.removeClass("cooldown");
+			if ($(".emerald-wind")) { $(".emerald-wind").remove(); }
+		}
+	}, 1000);
+}
+function animateHeroic(callback) {
+	var $h = $(".emerald-wind");
+	playAudio("heroic");
+	callback && callback();
+	setTimeout(function() {
+		$h.addClass("full");
+	}, 500);
+	setTimeout(function() {
+		playAudio("sad");
+	}, 3000);
+}
+function clearMinions() {
+	var m = $(".minion"),
+	    points = m.length;
+	
+	$.each(m, function(){
+		var $this = $(this);
+		$this.css("opacity", 0).remove();
+	});
+
+	score = score+points;
+	updateScore(score);
 }
