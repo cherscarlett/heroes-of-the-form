@@ -270,6 +270,9 @@ a.play:hover, a.play:active {
 .hero-battle > a {
 	text-indent: -10000px;
 	display:block;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 .hero-battle > a.hero {
@@ -345,7 +348,6 @@ a.play:hover, a.play:active {
 	margin-top: -27px;
   	transition: right linear .5s, opacity linear .3s;
   	z-index: 3;
-    user-select: none;
 }
 
 .hero-battle > a.boss, .hero-battle > a.boss:link, .hero-battle > a.boss:visited {
@@ -358,7 +360,6 @@ a.play:hover, a.play:active {
 	margin-top: -80px;
   	transition: right linear 1s;
   	z-index: 4;
-    user-select: none;
 }
 .hero-battle > a.minion:hover, .hero-battle > a.minion:active, .hero-battle > a.boss:hover, .hero-battle > a.boss:active {
 	background-position: top right;
@@ -458,7 +459,7 @@ footer {
 	opacity:0;
 	top:-450px;
 	left:70px;
-	z-index:0;
+	z-index:-1;
 }
 .level-up {
 	text-shadow:0 0 8px #009cff;

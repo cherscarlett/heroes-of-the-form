@@ -35,7 +35,7 @@ $("#heroic.available").live("click", function(){
 	useHeroic();
 });
 $(window).keypress(function(e){
-	if(e.which == 114 && timer > 60) {
+	if(e.which == 114 && timer >= 15) {
 		useHeroic();
 	}
 });
@@ -90,16 +90,26 @@ function updateScore() {
 }
 function startGame() {
 	var $battle = $(".hero-battle");
-
-	var minions = setInterval(function() {
+	var timerInterval = setInterval(function() {
 		timer++; 
-		create("minion"); 
-		if (timer == 60) {
+		if (timer == 15) {
 			$("#heroic").addClass("available");
 			$battle.prepend("<p class='level-up'>Level Up!</p>");
 			setTimeout(function() {
 				$(".level-up").remove();
 			}, 3000);
+		}
+	}, 1000);
+
+	
+
+	var mInterval = 1000,
+		bInterval = 5000,
+		intervalBreak = 10000;
+
+	var minions = setInterval(function() {
+		create("minion"); 
+		if (timer == 30) {
 			clearInterval(minions);
 			var minions = setInterval( function(){
 				create("minion"); 
