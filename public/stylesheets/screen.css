@@ -460,3 +460,17 @@ footer {
 	left:70px;
 	z-index:0;
 }
+.level-up {
+	text-shadow:0 0 8px #009cff;
+	text-transform: uppercase;
+	font-size:37px;
+	text-align: center;
+	width:1274px;
+	position:absolute;
+	top: -150px;
+}
+.level-up span {
+	text-shadow:none;
+	font-size:14px;
+	font-style: italic;
+}

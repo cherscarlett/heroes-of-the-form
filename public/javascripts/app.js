@@ -96,6 +96,10 @@ function startGame() {
 		create("minion"); 
 		if (timer == 60) {
 			$("#heroic").addClass("available");
+			$battle.prepend("<p class='level-up'>Level Up!</p>");
+			setTimeout(function() {
+				$(".level-up").remove();
+			}, 3000);
 			clearInterval(minions);
 			var minions = setInterval( function(){
 				create("minion"); 
