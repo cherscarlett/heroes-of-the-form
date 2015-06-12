@@ -501,6 +501,16 @@ footer {
 		background-position: 50% 45%;
 		background-size:200%;
 	}
+
+
+	.hero-battle > a.hero.friendly {
+		left:42px;
+	}
+
+	.hero-battle > a.hero.enemy {
+		right:22px;
+	}
+
 	.hero-battle > a.minion, .hero-battle > a.minion:link, .hero-battle > a.minion:visited {
 		background-size:200%;
 		height:58px;
