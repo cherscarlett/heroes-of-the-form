@@ -54,6 +54,7 @@ $(document).ready( function() {
 	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
 		fixScreen();	
 	}
+   window.scrollTo(0, 1);
 });
 
 function fixScreen() {
