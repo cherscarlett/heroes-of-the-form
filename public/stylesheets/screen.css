@@ -393,6 +393,7 @@ footer {
 	font-style: italic;
 	font-size: 14px;
 }
+
 #heroic {
 	opacity:0;
 	background: transparent url('/images/emerald-wind.jpg') 50% 0% no-repeat;
@@ -474,4 +475,14 @@ footer {
 	text-shadow:none;
 	font-size:14px;
 	font-style: italic;
+}
+
+@media screen and (orientation:portrait) {
+	body {
+	    -webkit-transform: rotate(90deg);
+	    -moz-transform: rotate(90deg);
+	    -o-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	    transform: rotate(90deg);
+	}
 }
