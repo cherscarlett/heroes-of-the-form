@@ -376,7 +376,7 @@ a.play:hover, a.play:active {
 	text-transform: uppercase;
 	padding:150px 0 190px 0;
 	font-size:37px;
-	background: transparent url('/images/cherpofthestorm.png') 50% 100% no-repeat;
+	background: transparent url('/images/cherpofthestorm.png') 50% 100% no-repeat; /* Cherp? DansGame */
 }
 .final-points-container {
 	font-size:44px;

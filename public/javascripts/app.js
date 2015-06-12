@@ -11,7 +11,7 @@ $("a.play").live("click", function() {
 $("a.hero").live("click", function(e){
 	var c = e.target.className.split(" ")[0], 
 	    heroName;
-	c != "brightwing" ? heroName = hero.name : heroName = "brightwing"; 
+	c != "brightwing" ? heroName = hero.name : heroName = "brightwing"; // Oh, look, Cherp is playing bright... ResidentSleeper
 	heroName ? playAudio(heroName) : playAudio("murky");
 });
 $("a.minion").live("click", function(){
@@ -66,7 +66,7 @@ function loadBattleground(heroName, callback) {
 	$(".hero-name").html(capitalizeName(heroName));
 	$(".hero.friendly").addClass(heroName).html(capitalizeName(heroName));
 	insertAudioClip(heroName);
-	setTimeout(function() { callback && callback(startGame); }, 5000);
+	setTimeout(function() { callback && callback(startGame); }, 5000); // just look at the pretty screen for at least 5 seconds, ok?
 }
 
 function capitalizeName(heroName) {
