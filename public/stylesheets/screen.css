@@ -506,12 +506,12 @@ footer {
 		width:100px;
 	}
 	.hero-battle > a.minion, .hero-battle > a.minion:link, .hero-battle > a.minion:visited {
-		background-size:100%;
+		background-size:200%;
 		height:58px;
 		width:64px;
 	}
 	.hero-battle > a.boss, .hero-battle > a.boss:link, .hero-battle > a.boss:visited {
-		background-size:100%;
+		background-size:200%;
 		height:210px;
 		width:246px;
 	}
