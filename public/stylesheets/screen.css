@@ -502,6 +502,9 @@ footer {
 		background-size:200%;
 	}
 
+	#heroic {
+		left:5px;
+	}
 
 	.hero-battle > a.hero.friendly {
 		left:42px;
