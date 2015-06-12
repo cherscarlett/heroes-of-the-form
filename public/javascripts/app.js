@@ -109,11 +109,11 @@ function startGame() {
 	createEnemies(timerInterval);
 }
 
-function increaseInterval(i, d) {
-	intervalBreak = timer/100;
+function increaseInterval(i, d, b) {
+	intervalBreak = timer+b;
 	interval = i*0.75;
 	d = d.replace("+=", "").replace("px", "");
-	d = parseInt(d)+2;
+	d = parseInt(d)*1.25;
 	distance = "+="+d+"px";
 }
 
@@ -132,34 +132,25 @@ function createEnemies(timerInterval) {
 		timer % 30 === 0 ? bIncrease = true : bIncrease = false;
 
 		if (mIncrease === true) {
-			increaseInterval(mInterval, mDistance);
+			increaseInterval(mInterval, mDistance, 15);
 			mInterval = interval;
 			mDistance = distance;
 			mIntervalBreak = intervalBreak;
+			createEnemyInterval("minion", 15, mInterval, mIntervalBreak);
 		}
 
 		if (bIncrease === true) {
-			increaseInterval(bInterval, bDistance);
+			increaseInterval(bInterval, bDistance, 30);
 			bInterval = interval;
 			bDistance = distance;
 			bIntervalBreak = intervalBreak;
+			createEnemyInterval("boss", 30, bInterval, bIntervalBreak);
 		}
-	},1000);
+	}, 1000);
 
+	createEnemyInterval("minion", 15, mInterval, mIntervalBreak);
 
-	var minions = setInterval(function() {
-		create("minion"); 
-		if (timer == mIntervalBreak) {
-			clearInterval(minions);
-		}
-	}, mInterval);	
-
-	var bosses = setInterval( function() {
-		create("boss");
-		if (timer == bIntervalBreak) {
-			clearInterval(bosses);
-		}
-	}, bInterval);
+	createEnemyInterval("boss", 30, bInterval, bIntervalBreak);
 
 	var moveEnemies = setInterval(function(){
 		var $m = $(".minion"),
@@ -171,8 +162,7 @@ function createEnemies(timerInterval) {
 			var $this = $(this),
 				$battle = $(".hero-battle");
 			if ($this.css("right").replace("px", "") >= 1075 || $this.css("right").replace("px", "") >= 1075) {
-				clearInterval(bosses);
-				clearInterval(minions);
+				clearInterval(enemies);
 				clearInterval(timerInterval);
 				clearInterval(moveEnemies);
 				clearInterval(evaluateTimer);
@@ -181,6 +171,15 @@ function createEnemies(timerInterval) {
 			}
 		});
 	},500);
+}
+
+function createEnemyInterval(type, difference, interval, iBreak) {
+	enemies = setInterval(function() {
+		create(type); 
+		if (timer+difference == iBreak) {
+			clearInterval(enemies);
+		}
+	}, interval);
 }
 
 function create(type) {
