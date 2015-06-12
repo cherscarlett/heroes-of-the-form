@@ -94,6 +94,10 @@ a, a:link, a:visited, a:hover, a:active {
 	height:781px;
 	background:transparent url('/images/container-bg.png') 50% 0% no-repeat;
 	margin:0 auto;
+	position: relative;
+}
+.inner-container {
+	position: relative;
 }
 .app-logo {
 	height:204px;
@@ -101,7 +105,7 @@ a, a:link, a:visited, a:hover, a:active {
 	background: transparent url('/images/logo.png') 50% 0% no-repeat;
 	text-indent: -10000px;
 	position:absolute;
-	top:0px;
+	top:-110px;
 	left:50%;
 	margin-left:-212px;
 	z-index:3;
@@ -481,7 +485,7 @@ footer {
 	font-style: italic;
 }
 
-@media screen and (orientation:portrait) {
+@media only screen and (orientation:portrait) and (max-device-width:480px) {
 	body {
 	    -webkit-transform: rotate(90deg);
 	    -moz-transform: rotate(90deg);
