@@ -55,6 +55,9 @@ $(document).ready( function() {
 		fixScreen();	
 	}
    	window.scrollTo(0, 1);
+	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent)) {
+		document.ontouchmove = function(e) {e.preventDefault()};
+	}
 });
 
 function fixScreen() {
