@@ -516,16 +516,6 @@ footer {
 		width:246px;
 	}
 
-	.hero-battle > a.hero:after {
-		height:100px;
-		width:100px;
-	}
-	.hero-battle > a.hero.friendly:after {
-		background-size:100px 100px;
-	}
-	.hero-battle > a.hero.enemy:after {
-		background-size:100px 100px;
-	}
 }	
 @media only screen and (orientation:portrait) and (max-device-width:480px) {
 	body {
