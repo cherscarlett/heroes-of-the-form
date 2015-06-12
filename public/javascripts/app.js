@@ -222,7 +222,7 @@ function useHeroic() {
 	$battle.append("<div class='emerald-wind'></div>");
 	$h.addClass("cooldown");
 	animateHeroic(clearMinions);
-	var coolDown = 60;
+	var coolDown = 45;
 	$h.find("span").html(coolDown);
 	var heroic = setInterval( function() {
 		coolDown--;
