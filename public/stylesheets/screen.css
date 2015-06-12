@@ -485,6 +485,15 @@ footer {
 	font-style: italic;
 }
 
+@media only screen and (max-device-width:480px) {
+	.wrapper {
+		width:100%;
+	}
+
+	.app-logo {
+		top: -100px;
+	}
+}	
 @media only screen and (orientation:portrait) and (max-device-width:480px) {
 	body {
 	    -webkit-transform: rotate(90deg);
@@ -492,10 +501,5 @@ footer {
 	    -o-transform: rotate(90deg);
 	    -ms-transform: rotate(90deg);
 	    transform: rotate(90deg);
-	}
-
-
-	.app-logo {
-		top: -100px;
 	}
 }
