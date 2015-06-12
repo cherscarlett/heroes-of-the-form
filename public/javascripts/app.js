@@ -111,7 +111,7 @@ function startGame() {
 
 function increaseInterval(i, d, b) {
 	intervalBreak = timer+b;
-	interval = i*0.75;
+	interval = i*0.50;
 	d = d.replace("+=", "").replace("px", "");
 	d = parseInt(d)*1.25;
 	distance = "+="+d+"px";
