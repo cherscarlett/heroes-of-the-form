@@ -486,9 +486,7 @@ footer {
 }
 
 @media only screen and (max-device-width:480px) {
-	body {
-		overflow:hidden;
-	}
+	
 	.wrapper {
         background-attachment: scroll;
         width:100%;
@@ -504,7 +502,6 @@ footer {
 		background-size:200%;
 	}
 	.minion {
-
 	}
 }	
 @media only screen and (orientation:portrait) and (max-device-width:480px) {
