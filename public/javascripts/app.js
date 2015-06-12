@@ -43,6 +43,9 @@ $(window).keypress(function(e){
 var hero = { name: "murky" };
 var score = 0;
 var timer = 0;
+var interval;
+var distance;
+var intervalBreak;
 
 function setHero(heroName) {
 	hero = { name: heroName};
@@ -90,8 +93,9 @@ function updateScore() {
 }
 function startGame() {
 	var $battle = $(".hero-battle");
+	
 	var timerInterval = setInterval(function() {
-		timer++; 
+		timer++;
 		if (timer == 15) {
 			$("#heroic").addClass("available");
 			$battle.prepend("<p class='level-up'>Level Up!</p>");
@@ -99,51 +103,86 @@ function startGame() {
 				$(".level-up").remove();
 			}, 3000);
 		}
+
 	}, 1000);
+ 
+	createEnemies(timerInterval);
+}
 
-	
+function increaseInterval(i, d) {
+	intervalBreak = timer/100;
+	interval = i*0.75;
+	d = d.replace("+=", "").replace("px", "");
+	d = parseInt(d)+2;
+	distance = "+="+d+"px";
+}
 
+function createEnemies(timerInterval) {
 	var mInterval = 1000,
-		bInterval = 5000,
-		intervalBreak = 10000;
+		bInterval = 10000,
+		mIntervalBreak = 15,
+		bIntervalBreak = 30,
+		mDistance = "+=15px",
+		bDistance = "+=5px",
+		mIncrease = false,
+		bIncrease = false;
+
+	var evaluateTimer = setInterval(function(){
+		timer % 15 === 0 ? mIncrease = true : mIncrease = false;
+		timer % 30 === 0 ? bIncrease = true : bIncrease = false;
+
+		if (mIncrease === true) {
+			increaseInterval(mInterval, mDistance);
+			mInterval = interval;
+			mDistance = distance;
+			mIntervalBreak = intervalBreak;
+		}
+
+		if (bIncrease === true) {
+			increaseInterval(bInterval, bDistance);
+			bInterval = interval;
+			bDistance = distance;
+			bIntervalBreak = intervalBreak;
+		}
+	},1000);
+
 
 	var minions = setInterval(function() {
 		create("minion"); 
-		if (timer == 30) {
+		if (timer == mIntervalBreak) {
 			clearInterval(minions);
-			var minions = setInterval( function(){
-				create("minion"); 
-			}, 500);
 		}
-	}, 1000);	
+	}, mInterval);	
 
 	var bosses = setInterval( function() {
 		create("boss");
-		if (timer == 90) {
+		if (timer == bIntervalBreak) {
 			clearInterval(bosses);
-			var bosses = setInterval( function(){
-				create("boss"); 
-			}, 5000);
 		}
-	}, 10000);
+	}, bInterval);
 
-	setInterval(function(){
+	var moveEnemies = setInterval(function(){
 		var $m = $(".minion"),
 			$b = $(".boss"),
 			enemies = $(".enemy");
-		$m.css({right: '+=15px'});
-		$b.css({right: '+=5px'});
+		$m.css({right: mDistance});
+		$b.css({right: bDistance});
 		$.each(enemies, function() {
-			var $this = $(this);
+			var $this = $(this),
+				$battle = $(".hero-battle");
 			if ($this.css("right").replace("px", "") >= 1075 || $this.css("right").replace("px", "") >= 1075) {
 				clearInterval(bosses);
 				clearInterval(minions);
+				clearInterval(timerInterval);
+				clearInterval(moveEnemies);
+				clearInterval(evaluateTimer);
 				showEndScreen();
 				$battle.remove();
 			}
 		});
 	},500);
 }
+
 function create(type) {
 	var $battle = $(".hero-battle");
 	$battle.prepend("<a href='javascript:;' class='"+type+" enemy'>"+type+"</a>")
