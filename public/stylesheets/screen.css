@@ -475,7 +475,7 @@ footer {
 	text-transform: uppercase;
 	font-size:37px;
 	text-align: center;
-	width:1274px;
+	width:100%;
 	position:absolute;
 	top: -150px;
 }
@@ -500,10 +500,6 @@ footer {
 	#battleground {
 		background-position: 50% 45%;
 		background-size:200%;
-	}
-	.hero-battle > a.hero {
-		height:100px;
-		width:100px;
 	}
 	.hero-battle > a.minion, .hero-battle > a.minion:link, .hero-battle > a.minion:visited {
 		background-size:200%;
