@@ -486,7 +486,7 @@ footer {
 }
 
 @media only screen and (max-device-width:480px) {
-	/* Note: I hadn't thought about making this mobile-friendly initially, so this is an afterthought */
+	/* Note: I hadn't thought about making this mobile-friendly initially, so this is an afterthought. I will call this "sort-of" mobile-friendly */
 	
 	.wrapper {
         background-attachment: scroll;
