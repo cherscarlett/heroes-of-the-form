@@ -11,7 +11,7 @@ $("a.play").live("click", function() {
 $("a.hero").live("click", function(e){
 	var c = e.target.className.split(" ")[0], 
 	    heroName;
-	c != "brightwing" ? heroName = hero.name : heroName = "brightwing"; // Oh, look, Cherp is playing bright... ResidentSleeper
+	c != "brightwing" ? heroName = hero.name : heroName = "brightwing"; // Oh, look! Cherp is playing bright... ResidentSleeper
 	heroName ? playAudio(heroName) : playAudio("murky");
 });
 $("a.minion").live("click", function(){
