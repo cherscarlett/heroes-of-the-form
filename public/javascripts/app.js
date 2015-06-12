@@ -51,10 +51,16 @@ var intervalBreak;
 
 $(document).ready( function() {
 	// cuz mobile-friendly is cool ok
-	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
-		fixScreen();	
+	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent)) {
+   		window.scrollTo(0, 1);
+		$('html, body').on('touchstart touchmove', function(e){ 
+     		//prevent native touch activity like scrolling
+    		 e.preventDefault(); 
+		});
+		if (window.orientation == 0) {
+			fixScreen();
+		}	
 	}
-   window.scrollTo(0, 1);
 });
 
 function fixScreen() {
