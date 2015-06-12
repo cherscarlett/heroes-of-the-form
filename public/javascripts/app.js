@@ -56,7 +56,8 @@ $(document).ready( function() {
 });
 
 function fixScreen() {
-	alert("do something!");
+	var h = document.documentElement.clientHeight;
+	$('.app-container, section, .wrapper').css("height", h+"px");
 }
 
 function setHero(heroName) {
