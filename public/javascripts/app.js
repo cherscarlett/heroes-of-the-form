@@ -56,15 +56,21 @@ $(document).ready( function() {
 	}
 	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 90) {
    		window.scrollTo(0, 1);
-		$('html, body').on('touchstart touchmove', function(e){ 
-    		 e.preventDefault(); 
-		});
+
+		document.body.parentElement.addEventListener("touchstart", defaultPrevent());
+		document.body.parentElement.addEventListener("touchmove" , defaultPrevent());
+		document.body.addEventListener("touchstart", defaultPrevent());
+		document.body.addEventListener("touchmove" , defaultPrevent());
 	}
 });
 
 function fixScreen() {
 	var h = document.documentElement.clientHeight;
 	$('.app-container, section, .wrapper').css("width", h+"px");
+}
+
+function defaultPrevent(e) {
+	e.defaultPreventDefault();
 }
 
 function setHero(heroName) {
