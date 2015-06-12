@@ -487,11 +487,9 @@ footer {
 
 @media only screen and (max-device-width:480px) {
 	.wrapper {
-		width:100%;
         background-attachment: scroll;
 	}
 	.app-container {
-		width:100%;
 	}
 	.app-logo {
 		top: -100px;
