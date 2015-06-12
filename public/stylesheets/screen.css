@@ -496,6 +496,13 @@ footer {
 	.app-logo {
 		top: -100px;
 	}
+	#battleground {
+		background-position: 50% 50%;
+		background-size:200%;
+	}
+	.minion {
+
+	}
 }	
 @media only screen and (orientation:portrait) and (max-device-width:480px) {
 	body {
