@@ -513,3 +513,10 @@ footer {
 	    transform: rotate(90deg);
 	} 
 }
+@media only screen and (orientation:landscape) and (max-device-width:480px) {
+	body, html{
+		max-height:100%;
+		max-width:100%;
+		overflow:hidden;
+	} 
+}
