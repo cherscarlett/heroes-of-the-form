@@ -8,67 +8,69 @@
     <script language="javascript" src="/javascripts/jquery-1.6.2.min.js" type="text/javascript"></script><script language="javascript" src="/javascripts/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script><script language="javascript" src="/javascripts/app.js" type="text/javascript"></script>
   </head>
   <body>
-    <div class="app-container">
-      <header class="app-logo">
-        <h1 class="title">Heroes of the F.O.R.M.</h1>
-        <h2 class="subtitle">(Front-end Operated Removal Mission)</h2>
-      </header>
-      <div class="inner-container">
-        <section id="main" class="active">
-          <p>A solo clicker of negligible proportions</p>
-          <div class="hero-selection">
-            <p>Summon your Hero</p>
-            <ul>
-              <li id="murky" class="selected"><a href="javascript:;">Murky</a></li>
-              <li id="abathur"><a href="javascript:;">Abathur</a></li>
-              <li id="sonya"><a href="javascript:;">Sonya</a></li>
-              <li id="gazlowe"><a href="javascript:;">Gazlowe</a></li>
-              <li id="azmodan"><a href="javascript:;">Azmodan</a></li>
-              <li id="kt"><a href="javascript:;">KT</a></li>
-            </ul>
-            <a class="play" href="javascript:;">Play</a>
-          </div>
-        </section>
-        <section id="loading">
-          <div id="hero-loading">
-            <p>left click the minions to remove them before they reach your hero <br />
-              bosses may require multiple clicks to defeat</p>
-          </div>
-        </section>
-        <section id="battleground">
-          <div class="hero-battle">
-            <a href='javascript:;' id='heroic'>R <span>60</span></a>
-            <a href="javascript:;" class="hero friendly"></a>
-            <a href="javascript:;" class="brightwing enemy hero">Brightwing</a>
-            <audio id="brightwing-audio">
-              <source src="/audio/brightwing-2.mp3" type="audio/mpeg" />
-            </audio>
-            <audio id="heroic-audio">
-              <source src="/audio/heroic.mp3" type="audio/mpeg" />
-            </audio>
-            <audio id="sad-audio">
-              <source src="/audio/sad.mp3" type="audio/mpeg" />
-            </audio>
-          </div>
-          <div class="hero-info">
-            <p class="hero-name"></p>
-            <p class="hero-points">0</p>
-          </div>
-        </section>
-        <section id="end">
-          <p class="thanks">Thanks for playing</p>
-          <div class="final-points-container">
-            <span>0 points</span>
-          </div>
-          <p class="high-score">Your highest score: <span>0 points</span></p>
-          <a class="play-again" href="/">play again?</a>
-          <footer>
-            <a href="http://cherstewart.herokuapp.com">cherstewart.herokuapp.com</a>
-            <audio id="end-audio">
-              <source src="/audio/brightwing-1.mp3" type="audio/mpeg" />
-            </audio>
-          </footer>
-        </section>
+    <div class="wrapper"> <!-- this is only here for mobile :( -->
+      <div class="app-container">
+        <header class="app-logo">
+          <h1 class="title">Heroes of the F.O.R.M.</h1>
+          <h2 class="subtitle">(Front-end Operated Removal Mission)</h2>
+        </header>
+        <div class="inner-container">
+          <section id="main" class="active">
+            <p>A solo clicker of negligible proportions</p>
+            <div class="hero-selection">
+              <p>Summon your Hero</p>
+              <ul>
+                <li id="murky" class="selected"><a href="javascript:;">Murky</a></li>
+                <li id="abathur"><a href="javascript:;">Abathur</a></li>
+                <li id="sonya"><a href="javascript:;">Sonya</a></li>
+                <li id="gazlowe"><a href="javascript:;">Gazlowe</a></li>
+                <li id="azmodan"><a href="javascript:;">Azmodan</a></li>
+                <li id="kt"><a href="javascript:;">KT</a></li>
+              </ul>
+              <a class="play" href="javascript:;">Play</a>
+            </div>
+          </section>
+          <section id="loading">
+            <div id="hero-loading">
+              <p>left click the minions to remove them before they reach your hero <br />
+                bosses may require multiple clicks to defeat</p>
+            </div>
+          </section>
+          <section id="battleground">
+            <div class="hero-battle">
+              <a href='javascript:;' id='heroic'>R <span>60</span></a>
+              <a href="javascript:;" class="hero friendly"></a>
+              <a href="javascript:;" class="brightwing enemy hero">Brightwing</a>
+              <audio id="brightwing-audio">
+                <source src="/audio/brightwing-2.mp3" type="audio/mpeg" />
+              </audio>
+              <audio id="heroic-audio">
+                <source src="/audio/heroic.mp3" type="audio/mpeg" />
+              </audio>
+              <audio id="sad-audio">
+                <source src="/audio/sad.mp3" type="audio/mpeg" />
+              </audio>
+            </div>
+            <div class="hero-info">
+              <p class="hero-name"></p>
+              <p class="hero-points">0</p>
+            </div>
+          </section>
+          <section id="end">
+            <p class="thanks">Thanks for playing</p>
+            <div class="final-points-container">
+              <span>0 points</span>
+            </div>
+            <p class="high-score">Your highest score: <span>0 points</span></p>
+            <a class="play-again" href="/">play again?</a>
+            <footer>
+              <a href="http://cherstewart.herokuapp.com">cherstewart.herokuapp.com</a>
+              <audio id="end-audio">
+                <source src="/audio/brightwing-1.mp3" type="audio/mpeg" />
+              </audio>
+            </footer>
+          </section>
+        </div>
       </div>
     </div>
   </body>
