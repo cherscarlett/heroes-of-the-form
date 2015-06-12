@@ -486,7 +486,11 @@ footer {
 	    transform: rotate(90deg);
 	}
 
+
 	.app-logo {
-		top:-100px;
+		top: -100px;
+	}
+	.app-container {
+		width:100%;
 	}
 }
