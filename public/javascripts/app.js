@@ -54,7 +54,7 @@ $(document).ready( function() {
 	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
 		fixScreen();	
 	}
-	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 90) {
+	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent)) {
    		window.scrollTo(0, 1);
 
 		document.body.parentElement.addEventListener("touchstart", defaultPrevent());
