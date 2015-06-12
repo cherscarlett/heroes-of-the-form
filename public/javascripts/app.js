@@ -31,9 +31,11 @@ $("a.boss").live("click", function(){
 		updateScore(score);
 	}
 });
+
 $("#heroic.available").live("click", function(){
 	useHeroic();
 });
+
 $(window).keypress(function(e){
 	if(e.which == 114 && timer >= 15) {
 		useHeroic();
@@ -46,6 +48,16 @@ var timer = 0;
 var interval;
 var distance;
 var intervalBreak;
+
+$(document).ready( function() {
+	if (/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
+		fixScreen();	
+	}
+});
+
+function fixScreen() {
+	alert("do something!");
+}
 
 function setHero(heroName) {
 	hero = { name: heroName};
@@ -74,7 +86,7 @@ function capitalizeName(heroName) {
 }
 
 function insertAudioClip(heroName) {
-	$(".hero-battle").append("<audio id='"+heroName+"-audio'><source src='/audio/"+heroName+".mp3' type='audio/mpeg' /></audio>")
+	$(".hero-battle").append("<audio id='"+heroName+"-audio'><source src='/audio/"+heroName+".mp3' type='audio/mpeg' /></audio>");
 }
 
 function playAudio(heroName) {
