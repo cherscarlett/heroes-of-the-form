@@ -50,7 +50,8 @@ var distance;
 var intervalBreak;
 
 $(document).ready( function() {
-	if (/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
+	// cuz mobile-friendly is cool ok
+	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
 		fixScreen();	
 	}
 });
