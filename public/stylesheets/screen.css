@@ -486,6 +486,7 @@ footer {
 }
 
 @media only screen and (max-device-width:480px) {
+	/* Note: I hadn't thought about making this mobile-friendly initially, so this is an afterthought */
 	
 	.wrapper {
         background-attachment: scroll;
@@ -507,11 +508,11 @@ footer {
 	}
 
 	.hero-battle > a.hero.friendly {
-		left:42px;
+		left:52px;
 	}
 
 	.hero-battle > a.hero.enemy {
-		right:22px;
+		right:32px;
 	}
 
 	.hero-battle > a.minion, .hero-battle > a.minion:link, .hero-battle > a.minion:visited {
