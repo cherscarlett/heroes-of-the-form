@@ -485,4 +485,8 @@ footer {
 	    -ms-transform: rotate(90deg);
 	    transform: rotate(90deg);
 	}
+
+	.app-logo {
+		top:-100px;
+	}
 }
