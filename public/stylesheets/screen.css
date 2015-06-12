@@ -486,6 +486,9 @@ footer {
 }
 
 @media only screen and (max-device-width:480px) {
+	body {
+		overflow:hidden;
+	}
 	.wrapper {
         background-attachment: scroll;
         width:100%;
