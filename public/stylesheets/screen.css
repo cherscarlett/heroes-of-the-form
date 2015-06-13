@@ -493,9 +493,11 @@ footer {
         background-attachment: scroll;
         width:100%;
 	}
+
 	.app-container, section {
 		width:100%;
 	}
+	
 	.app-logo {
 		top: -100px;
 	}

@@ -52,12 +52,16 @@ var hero = { name: "murky" },
 	interval,
 	distance,
 	intervalBreak,
-	cdAvailable = false;
+	cdAvailable = false,
+	gameEndMarker = 1075;
 
 $(document).ready( function() {
 	// cuz mobile-friendly is cool ok
 	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
 		fixScreen();	
+	}
+	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) {
+		gameEndMarker = 440;
 	}
    	window.scrollTo(0, 1);
 });
@@ -187,7 +191,7 @@ function createEnemies(timerInterval) {
 		$.each(enemies, function() {
 			var $this = $(this),
 				$battle = $(".hero-battle");
-			if ($this.css("right").replace("px", "") >= 1075 || $this.css("right").replace("px", "") >= 1075) {
+			if ($this.css("right").replace("px", "") >= gameEndMarker) {
 				clearInterval(enemies);
 				clearInterval(timerInterval);
 				clearInterval(moveEnemies);
