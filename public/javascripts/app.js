@@ -37,17 +37,22 @@ $("#heroic.available").live("click", function(){
 });
 
 $(window).keypress(function(e){
-	if(e.which == 114 && timer >= 15) {
-		useHeroic();
+	var c = 0;
+	if(e.which == 114 && cdAvailable === true) {
+		c++;
+		if (c == 1 ) {
+			useHeroic();
+		}
 	}
 });
 
-var hero = { name: "murky" };
-var score = 0;
-var timer = 0;
-var interval;
-var distance;
-var intervalBreak;
+var hero = { name: "murky" },
+	score = 0,
+	timer = 0,
+	interval,
+	distance,
+	intervalBreak,
+	cdAvailable = false;
 
 $(document).ready( function() {
 	// cuz mobile-friendly is cool ok
@@ -110,12 +115,14 @@ function updateScore() {
 	var s = $(".hero-points");
 	s.html(score);
 }
+
 function startGame() {
 	var $battle = $(".hero-battle");
 	
 	var timerInterval = setInterval(function() {
 		timer++;
 		if (timer == 15) {
+			cdAvailable = true;
 			$("#heroic").addClass("available");
 			$battle.prepend("<p class='level-up'>Level Up!</p>");
 			setTimeout(function() {
@@ -234,10 +241,11 @@ function getHighScore() {
 	highScore = highScore+" "+u;
 	return highScore;
 }
+
 function useHeroic() {
 	var $battle = $(".hero-battle"), 
 		$h = $("#heroic");
-	
+	cdAvailable = false;
 	$battle.append("<div class='emerald-wind'></div>");
 	$h.addClass("cooldown");
 	animateHeroic(clearMinions);
@@ -250,10 +258,12 @@ function useHeroic() {
 		}
 		if (coolDown == 0) {
 			$h.removeClass("cooldown");
+			cdAvailable = true;
 			if ($(".emerald-wind")) { $(".emerald-wind").remove(); }
 		}
 	}, 1000);
 }
+
 function animateHeroic(callback) {
 	var $h = $(".emerald-wind");
 	playAudio("heroic");
