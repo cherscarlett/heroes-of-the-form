@@ -60,7 +60,7 @@ $(document).ready( function() {
 	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) && window.orientation == 0) {
 		fixScreen();	
 	}
-	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent) {
+	if (/Android|webOS|iPhone|iPod/i.test(navigator.userAgent)) {
 		gameEndMarker = 440;
 	}
    	window.scrollTo(0, 1);
